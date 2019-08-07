@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<libreria>
+	<libro isbn="0-764-54394-6">
+		<titulo>Beginning XML</titulo>
+		<autor>David Hunter</autor>
+		<autor>Kurt Cagle</autor>
+		<autor>Chris Dix</autor>
+		<editorial>Wrox</editorial>
+		<precio moneda="US">$24.95</precio>
+	</libro>
+	<libro isbn="0-201-74095-8">
+		<titulo>Essential XML Quick Reference</titulo>
+		<autor>Aaron Skonnard</autor>
+		<autor>Martin Gudgin</autor>
+		<editorial>Addison-Wesley</editorial>
+		<precio moneda="COL">$127.950</precio>
+	</libro>
+</libreria>

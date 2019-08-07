@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE genealogia [
+<!ELEMENT genealogia (personaje)>
+<!ELEMENT personaje (apodo?, fechas, titulo?, reinado?, descendencia?)>
+	<!ATTLIST personaje nombre CDATA #REQUIRED>
+<!ELEMENT apodo (#PCDATA)>
+<!ELEMENT fechas EMPTY>
+	<!ATTLIST fechas 
+		nacimiento CDATA #REQUIRED
+		deceso CDATA #REQUIRED
+	>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT reinado EMPTY>
+	<!ATTLIST reinado 
+		inicio CDATA #REQUIRED
+		fin CDATA #REQUIRED
+	>
+<!ELEMENT descendencia (personaje*)>
+]>
+<genealogia>
+	<personaje nombre="Felipe II Augusto">
+		<fechas nacimiento="1165" deceso="1223"/>
+		<reinado inicio="1180" fin="1223"/>
+		<descendencia>
+			<personaje nombre="Luis VIII el león">
+				<fechas nacimiento="1187" deceso="1226"/>
+				<reinado inicio="1223" fin="1226"/>
+				<descendencia>
+					<personaje nombre="Luis IX">
+						<fechas nacimiento="1214" deceso="1270"/>
+						<reinado inicio="1226" fin="1270"/>
+						<descendencia>
+							<personaje nombre="Felipe III">
+								<fechas nacimiento="1245" deceso="1285"/>
+								<reinado inicio="1270" fin="1285"/>
+								<descendencia>
+									<personaje nombre="Felipe IV el hermoso">
+										<fechas nacimiento="1268" deceso="1314"/>
+										<reinado inicio="1285" fin="1314"/>
+										<descendencia>
+											<personaje nombre="Luis X el obstinado">
+												<fechas nacimiento="1289" deceso="1316"/>
+												<reinado inicio="1314" fin="1316"/>
+											</personaje>
+											<personaje nombre="Felipe V el largo">
+												<fechas nacimiento="1294" deceso="1322"/>
+												<reinado inicio="1317" fin="1322"/>
+											</personaje>
+											<personaje nombre="Carlos IV el hermoso">
+												<fechas nacimiento="1294" deceso="1328"/>
+												<reinado inicio="1322" fin="1328"/>
+											</personaje>
+										</descendencia>
+									</personaje>
+									<personaje nombre="Carlos">
+										<fechas nacimiento="1270" deceso="1325"/>
+										<titulo>Conde de Valois</titulo>
+										<descendencia>
+											<personaje nombre="Felipe VI de Valois">
+												<fechas nacimiento="1293" deceso="1350"/>
+												<reinado inicio="1328" fin="1350"/>
+												<descendencia>
+													<personaje nombre="Juan II el bueno">
+														<fechas nacimiento="1319" deceso="1364"/>
+														<reinado inicio="1350" fin="1364"/>
+														<descendencia>
+															<personaje nombre="Carlos V el sabio">
+																<fechas nacimiento="1338" deceso="1380"/>
+																<reinado inicio="1364" fin="1380"/>
+																<descendencia>
+																	<personaje nombre="Carlos VI el loco">
+																		<fechas nacimiento="1368" deceso="1422"/>
+																		<reinado inicio="1380" fin="1422"/>
+																	</personaje>
+																	<personaje nombre="Luis de Francia">
+																		<fechas nacimiento="1372" deceso="1407"/>
+																		<titulo/>
+																		<descendencia>
+																			<personaje nombre="Carlos de Orleans">
+																				<fechas nacimiento="1394" deceso="1465"/>
+																				<titulo>duque d'Orleans</titulo>
+																				<descendencia>
+																					<personaje nombre="Luis XII">
+																						<apodo>Padre del pueblo</apodo>
+																						<fechas nacimiento="1462" deceso="1515"/>
+																						<reinado inicio="1498" fin="1515"/>
+																					</personaje>
+																				</descendencia>
+																			</personaje>
+																		</descendencia>
+																	</personaje>
+																</descendencia>
+															</personaje>
+														</descendencia>
+													</personaje>
+												</descendencia>
+											</personaje>
+										</descendencia>
+									</personaje>
+								</descendencia>
+							</personaje>
+						</descendencia>
+					</personaje>
+				</descendencia>
+			</personaje>
+		</descendencia>
+	</personaje>
+</genealogia>
