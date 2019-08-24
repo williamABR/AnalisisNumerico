@@ -1,5 +1,46 @@
-#Se igualaron las funciones f(x)=g(x), la ecuacion obtenida fue k(x)=f(x)-g(x)
-#La complejidad del algoritmo es de O(n)
+---
+title: "Parcial_WilliamBaquero"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##Punto 1-b
+
+-La complejidad de el Algoritmo es de O(n)
+
+```{r , echo=FALSE}
+sumaMatrix <- function(n){
+  x <- sample(1:10,n*n,replace=T)
+  A <- matrix( 
+    c(x), # the data elements 
+    nrow=n,              # number of rows 
+    ncol=n,              # number of columns 
+    byrow = TRUE)
+  suma = 0
+  A
+  for(i in A){
+    suma = suma + i
+  }
+  print(A)
+  cat("Suma de los valores de la matriz es igual a: ",suma,"\n\n")
+}
+sumaMatrix(4)
+sumaMatrix(6)
+sumaMatrix(8)
+sumaMatrix(5)
+sumaMatrix(2)
+```
+
+##PUNTO 2
+
+-Se igualaron las funciones f(x)=g(x), la ecuacion obtenida fue k(x)=f(x)-g(x)
+-La complejidad del algoritmo es de O(n)
+```{r , echo=FALSE}
 k <- function(x) log(x+2)-sin(x)
 convergencia <- function(f,x0,x1){
   iter <- 1
@@ -32,4 +73,5 @@ convergencia <- function(f,x0,x1){
 }
 
 convergencia(k,-1.7,-1)
+```
 
