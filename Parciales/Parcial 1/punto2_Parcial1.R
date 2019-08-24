@@ -1,4 +1,6 @@
-f <- function(x) log(x+2)-sin(x)
+#Se igualaron las funciones f(x)=g(x), la ecuacion obtenida fue k(x)=f(x)-g(x)
+#La complejidad del algoritmo es de O(n)
+k <- function(x) log(x+2)-sin(x)
 convergencia <- function(f,x0,x1){
   iter <- 1
   cat("-----------------------------\n")
@@ -26,7 +28,7 @@ convergencia <- function(f,x0,x1){
        xlab = "Iteraciones",
        ylab = "Error est",
        type = "l")
-  print(x2)
+  cat("Iteraciones: ",iter,"  Resultado:",x2) 
 }
 
-convergencia(f,-1.7,-1)
+convergencia(k,-1.7,-1)
