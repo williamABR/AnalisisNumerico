@@ -1,13 +1,10 @@
 ---
 title: "Parcial_WilliamBaquero"
 output:
+  pdf_document: default
   html_document:
     df_print: paged
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 ##Punto 1-b
 
