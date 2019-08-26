@@ -1,16 +1,13 @@
 ---
 title: "Parcial_WilliamBaquero"
-output:
-  pdf_document: default
-  html_document:
-    df_print: paged
+output: pdf_document
 ---
 
 ##Punto 1-b
 
 -La complejidad de el Algoritmo es de O(n)
 
-```{r , echo=FALSE}
+```{r , echo=TRUE}
 sumaMatrix <- function(n){
   x <- sample(1:10,n*n,replace=T)
   A <- matrix( 
@@ -37,7 +34,7 @@ sumaMatrix(2)
 
 -Se igualaron las funciones f(x)=g(x), la ecuacion obtenida fue k(x)=f(x)-g(x)
 -La complejidad del algoritmo es de O(n)
-```{r , echo=FALSE}
+```{r , echo=TRUE}
 k <- function(x) log(x+2)-sin(x)
 convergencia <- function(f,x0,x1){
   iter <- 1

@@ -1,0 +1,290 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Parcial\_WilliamBaquero},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Parcial\_WilliamBaquero}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{}
+    \preauthor{}\postauthor{}
+    \date{}
+    \predate{}\postdate{}
+  
+
+\begin{document}
+\maketitle
+
+\#\#Punto 1-b
+
+-La complejidad de el Algoritmo es de O(n)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sumaMatrix <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(n)\{}
+\NormalTok{  x <-}\StringTok{ }\KeywordTok{sample}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{,n}\OperatorTok{*}\NormalTok{n,}\DataTypeTok{replace=}\NormalTok{T)}
+\NormalTok{  A <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{( }
+    \KeywordTok{c}\NormalTok{(x), }\CommentTok{# the data elements }
+    \DataTypeTok{nrow=}\NormalTok{n,              }\CommentTok{# number of rows }
+    \DataTypeTok{ncol=}\NormalTok{n,              }\CommentTok{# number of columns }
+    \DataTypeTok{byrow =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{  suma =}\StringTok{ }\DecValTok{0}
+\NormalTok{  A}
+  \ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in}\NormalTok{ A)\{}
+\NormalTok{    suma =}\StringTok{ }\NormalTok{suma }\OperatorTok{+}\StringTok{ }\NormalTok{i}
+\NormalTok{  \}}
+  \KeywordTok{print}\NormalTok{(A)}
+  \KeywordTok{cat}\NormalTok{(}\StringTok{"Suma de los valores de la matriz es igual a: "}\NormalTok{,suma,}\StringTok{"}\CharTok{\textbackslash{}n\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\NormalTok{\}}
+\KeywordTok{sumaMatrix}\NormalTok{(}\DecValTok{4}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3] [,4]
+## [1,]    3    3    1    5
+## [2,]    6    4    8    8
+## [3,]    8    1    1    2
+## [4,]    7    6    4    4
+## Suma de los valores de la matriz es igual a:  71
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{sumaMatrix}\NormalTok{(}\DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3] [,4] [,5] [,6]
+## [1,]    6    7    6   10    2    5
+## [2,]    8    5    6    5    5    5
+## [3,]    6    3    2    2    3    7
+## [4,]    4    2    8    9    7    6
+## [5,]   10   10    3    1    7    4
+## [6,]    6    4    5    6    4    5
+## Suma de los valores de la matriz es igual a:  194
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{sumaMatrix}\NormalTok{(}\DecValTok{8}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
+## [1,]    6    4    6    2    2    5    8    5
+## [2,]    2    9    9    3   10    5    8    6
+## [3,]    1    2    6    4    6    2    2    3
+## [4,]   10    7    9    5   10    1    3   10
+## [5,]    4    2    5    7    6    8    8    8
+## [6,]    6    1    4    8    9   10    6    4
+## [7,]    4    7    5    3    1    2    5    8
+## [8,]    7    9    1    5   10    8    5   10
+## Suma de los valores de la matriz es igual a:  357
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{sumaMatrix}\NormalTok{(}\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    8    6    3    1    2
+## [2,]    3    1   10    2    6
+## [3,]    8    2    7    9    4
+## [4,]    9    9    6    6    8
+## [5,]    7    5   10    1    7
+## Suma de los valores de la matriz es igual a:  140
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{sumaMatrix}\NormalTok{(}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2]
+## [1,]    3    5
+## [2,]    2    4
+## Suma de los valores de la matriz es igual a:  14
+\end{verbatim}
+
+\#\#PUNTO 2
+
+-Se igualaron las funciones f(x)=g(x), la ecuacion obtenida fue
+k(x)=f(x)-g(x) -La complejidad del algoritmo es de O(n)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{k <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x) }\KeywordTok{log}\NormalTok{(x}\OperatorTok{+}\DecValTok{2}\NormalTok{)}\OperatorTok{-}\KeywordTok{sin}\NormalTok{(x)}
+\NormalTok{convergencia <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(f,x0,x1)\{}
+\NormalTok{  iter <-}\StringTok{ }\DecValTok{1}
+  \KeywordTok{cat}\NormalTok{(}\StringTok{"-----------------------------}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+  \KeywordTok{cat}\NormalTok{(}\KeywordTok{formatC}\NormalTok{( }\KeywordTok{c}\NormalTok{(}\StringTok{"iteraciones"}\NormalTok{,}\StringTok{"x"}\NormalTok{,}\StringTok{"Error est."}\NormalTok{), }\DataTypeTok{width =} \DecValTok{-15}\NormalTok{, }\DataTypeTok{format =} \StringTok{"f"}\NormalTok{, }\DataTypeTok{flag =} \StringTok{" "}\NormalTok{), }\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{) }
+  \KeywordTok{cat}\NormalTok{(}\StringTok{"-----------------------------}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\NormalTok{  x2 <-}\StringTok{ }\NormalTok{(x0}\OperatorTok{-}\NormalTok{((}\KeywordTok{f}\NormalTok{(x0)}\OperatorTok{*}\NormalTok{(x0}\OperatorTok{-}\NormalTok{x1))}\OperatorTok{/}\NormalTok{(}\KeywordTok{f}\NormalTok{(x0)}\OperatorTok{-}\KeywordTok{f}\NormalTok{(x1))))}
+\NormalTok{  e <-}\StringTok{ }\KeywordTok{abs}\NormalTok{(x2}\OperatorTok{-}\NormalTok{x1)}
+\NormalTok{  x0 <-}\StringTok{ }\NormalTok{x1}
+\NormalTok{  x1 <-}\StringTok{ }\NormalTok{x2}
+\NormalTok{  datos <-}\StringTok{ }\KeywordTok{c}\NormalTok{(e)}
+  \KeywordTok{cat}\NormalTok{(}\KeywordTok{formatC}\NormalTok{( }\KeywordTok{c}\NormalTok{(iter,x2,e), }\DataTypeTok{digits=}\DecValTok{8}\NormalTok{, }\DataTypeTok{width =} \DecValTok{-15}\NormalTok{, }\DataTypeTok{format =} \StringTok{"f"}\NormalTok{, }\DataTypeTok{flag =} \StringTok{" "}\NormalTok{), }\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{) }
+  \ControlFlowTok{while}\NormalTok{(e }\OperatorTok{>}\StringTok{ }\FloatTok{1e-8}\NormalTok{)\{}
+\NormalTok{    iter <-}\StringTok{ }\NormalTok{iter}\OperatorTok{+}\DecValTok{1}
+\NormalTok{    x2 <-}\StringTok{ }\NormalTok{(x0}\OperatorTok{-}\NormalTok{((}\KeywordTok{f}\NormalTok{(x0)}\OperatorTok{*}\NormalTok{(x0}\OperatorTok{-}\NormalTok{x1))}\OperatorTok{/}\NormalTok{(}\KeywordTok{f}\NormalTok{(x0)}\OperatorTok{-}\KeywordTok{f}\NormalTok{(x1))))}
+\NormalTok{    e <-}\StringTok{ }\KeywordTok{abs}\NormalTok{(x2}\OperatorTok{-}\NormalTok{x1)}
+\NormalTok{    datos <-}\StringTok{ }\KeywordTok{c}\NormalTok{(datos,e)}
+    \KeywordTok{cat}\NormalTok{(}\KeywordTok{formatC}\NormalTok{( }\KeywordTok{c}\NormalTok{(iter,x2,e), }\DataTypeTok{digits=}\DecValTok{8}\NormalTok{, }\DataTypeTok{width =} \DecValTok{-15}\NormalTok{, }\DataTypeTok{format =} \StringTok{"f"}\NormalTok{, }\DataTypeTok{flag =} \StringTok{" "}\NormalTok{), }\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{) }
+\NormalTok{    x0 <-}\StringTok{ }\NormalTok{x1}
+\NormalTok{    x1 <-}\StringTok{ }\NormalTok{x2}
+\NormalTok{  \}}
+\NormalTok{  x <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{, iter, }\DataTypeTok{by=}\DecValTok{1}\NormalTok{)}
+  \KeywordTok{plot}\NormalTok{(x,datos,}
+       \DataTypeTok{pch =} \DecValTok{19}\NormalTok{,}
+       \DataTypeTok{main =} \StringTok{"Iteraciones vs Error est "}\NormalTok{,}
+       \DataTypeTok{xlab =} \StringTok{"Iteraciones"}\NormalTok{,}
+       \DataTypeTok{ylab =} \StringTok{"Error est"}\NormalTok{,}
+       \DataTypeTok{type =} \StringTok{"l"}\NormalTok{)}
+  \KeywordTok{cat}\NormalTok{(}\StringTok{"Iteraciones: "}\NormalTok{,iter,}\StringTok{"  Resultado:"}\NormalTok{,x2) }
+\NormalTok{\}}
+
+\KeywordTok{convergencia}\NormalTok{(k,}\OperatorTok{-}\FloatTok{1.7}\NormalTok{,}\OperatorTok{-}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## -----------------------------
+## iteraciones     x               Error est.      
+## -----------------------------
+##  1.00000000     -1.55896891      0.55896891     
+##  2.00000000     -1.71246557      0.15349666     
+##  3.00000000     -1.62254234      0.08992324     
+##  4.00000000     -1.63034497      0.00780263     
+##  5.00000000     -1.63145832      0.00111335     
+##  6.00000000     -1.63144357      0.00001475     
+##  7.00000000     -1.63144360      0.00000002     
+##  8.00000000     -1.63144360      0.00000000
+\end{verbatim}
+
+\includegraphics{DocumentoParcial_files/figure-latex/unnamed-chunk-2-1.pdf}
+
+\begin{verbatim}
+## Iteraciones:  8   Resultado: -1.631444
+\end{verbatim}
+
+
+\end{document}
