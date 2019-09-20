@@ -23,7 +23,7 @@ ajuste_polinomio = poly_calc(datosx,datosy,1e-10)
 points(datosx,datosy, pch=19, cex=0.5, col="red" ,asp=1,xlab="X", ylab="Y", main="mano Derecha ")
 curve(ajuste_polinomio, add=T, from = 11.6, to=12.9, xlim = c(6,20), ylim=c(3,19))
 
-q=c(6,8,10,12,14,16,18,20)
+q=c(6,8,10,12,14,16,18,20)gr
 w=c(7,9,12,18,21,19,15,10)
 
 plot(q,w, pch=19, cex=1.1, col = "black", asp=1,xlab="X", ylab="Y", main="Diagrama ", xlim = c(1,20),ylim = c(1,25))
