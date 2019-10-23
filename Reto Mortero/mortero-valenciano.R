@@ -9,70 +9,181 @@ z <- outer(x, y, f)
 z[is.na(z)] <- 1
 persp3d(x, y, z-1.5, aspect = c(1, 1, 0.5), col = "red",
         xlab = "X", ylab = "Y", zlab = "z", 
-        xlim = c(-1, 1), ylim = c(-1, 1), zlim = c(-1.5, 2),
+        xlim = c(-1, 1), ylim = c(-1, 1), zlim = c(-1.5, -0.5),
         polygon_offset = 1)
 persp3d(x, y, z-1.5, front = "lines", back = "lines",
-        xlim = c(-1, 1), ylim = c(-1, 1), zlim = c(-1.5, 2),
+        xlim = c(-1, 1), ylim = c(-1, 1), zlim = c(-1.5, -0.5),
         lit = FALSE, add = TRUE)
 
-# Dibuja la primera oreja del mortero valenciano
 ## BEZIER CURVES ##
 ## SPECIFY PARAMETRIC VALUES FROM 0 TO 1 FOR SAMLPING A BEZIER CURVE
 t <- seq(0, 1, length=100)
-## BEZIER CONTROL POINTS
-p1 <- matrix(c(0.94,0.25,1.95, 1.2,0.2,1.95, 1.3,0,1.95, 1.2,-0.2,1.95, 0.94,-0.25,1.95), nrow=5, ncol=3, byrow=TRUE)
-## PLOT A BEZIER CURVE
-plot3d(bezier_points <- bezier(t=t, p=p1[1:3, ]), col = "#8A0808", size = 6, add = TRUE)
-## BEZIER CONTROL POINTS
-p2 <- matrix(c(0.94,-0.25,1.95, 1.2,-0.2,1.95, 1.3,0,1.95, 1.2,0.2,1.95, 0.94,0.25,1.95), nrow=5, ncol=3, byrow=TRUE)
-## PLOT A BEZIER CURVE
-plot3d(bezier_points <- bezier(t=t, p=p2[1:3, ]), col = "#8A0808", size = 6, add = TRUE)
-## BEZIER CONTROL POINTS
-p3 <- matrix(c(0.9,0,1, 1.25,0,1.35, 1.3,0,1.95, 1.25,0,1.35, 0.9,0,1.3), nrow=5, ncol=3, byrow=TRUE)
-## PLOT A BEZIER CURVE
-plot3d(bezier_points <- bezier(t=t, p=p3[1:3, ]), col = "#8A0808", size = 6, add = TRUE)
 
-# Dibuja la segunda oreja del mortero valenciano
-## BEZIER CONTROL POINTS
-p1 <- matrix(c(-0.94,0.25,1.95, -1.2,0.2,1.95, -1.3,0,1.95, -1.2,-0.2,1.95, 0.94,-0.25,1.95), nrow=5, ncol=3, byrow=TRUE)
-## PLOT A BEZIER CURVE
-plot3d(bezier_points <- bezier(t=t, p=p1[1:3, ]), col = "#8A0808", size = 6, add = TRUE)
-## BEZIER CONTROL POINTS
-p2 <- matrix(c(-0.94,-0.25,1.95, -1.2,-0.2,1.95, -1.3,0,1.95, -1.2,-0.2,1.95, -0.94,-0.25,1.95), nrow=5, ncol=3, byrow=TRUE)
-## PLOT A BEZIER CURVE
-plot3d(bezier_points <- bezier(t=t, p=p2[1:3, ]), col = "#8A0808", size = 6, add = TRUE)
-## BEZIER CONTROL POINTS
-p3 <- matrix(c(-0.9,0,1, -1.25,0,1.35, -1.3,0,1.95, -1.25,0,1.35, -0.9,0,1.3), nrow=5, ncol=3, byrow=TRUE)
-## PLOT A BEZIER CURVE
-plot3d(bezier_points <- bezier(t=t, p=p3[1:3, ]), col = "#8A0808", size = 6, add = TRUE)
+## PRIMERA PUNTA DEL MORTERO VALENCIANO
+xi <- 0
+yi <- 0
+zi <- 0
+for(p in 1:25) {
+  ## BEZIER CONTROL POINTS
+  p1 <- matrix(c(0.68,0.2-yi,-0.5-zi, 0.9-xi,0.15,-0.5-zi, 1-xi,0,-0.5-zi, 0.9-xi,-0.15,-0.5-zi, 0.68-xi,-0.2-yi,-0.5-zi), nrow=5, ncol=3, byrow=TRUE)
+  ## PLOT A BEZIER CURVE
+  plot3d(bezier_points <- bezier(t=t, p=p1[1:3, ]), col = "#8A0808", size = 1, add = TRUE)
+  ## VARIABLE INCREASE
+  if(p>12) {
+    xi <- xi + 0.015
+  } else {
+    xi <- xi + 0.01
+  }
+  yi <- yi + 0.005
+  zi <- zi + 0.01
+}
 
-# Dibuja la tercera oreja del mortero valenciano
+xi <- 0
+yi <- 0
+zi <- 0
+for(p in 1:25) {
+  ## BEZIER CONTROL POINTS
+  p2 <- matrix(c(0.68,-0.2+yi,-0.5-zi, 0.9-xi,-0.15,-0.5-zi, 1-xi,0,-0.5-zi, 0.9-xi,0.15,-0.5-zi, 0.68-xi,0.2+yi,-0.5-zi), nrow=5, ncol=3, byrow=TRUE)
+  ## PLOT A BEZIER CURVE
+  plot3d(bezier_points <- bezier(t=t, p=p2[1:3, ]), col = "#8A0808", size = 1, add = TRUE)
+  ## VARIABLE INCREASE
+  if(p>12) {
+    xi <- xi + 0.015
+  } else {
+    xi <- xi + 0.01
+  }
+  yi <- yi + 0.005
+  zi <- zi + 0.01
+}
 ## BEZIER CONTROL POINTS
-p1 <- matrix(c(0.25,0.94,1.95, 0.2,1.2,1.95, 0,1.3,1.95, 0.2,-1.2,1.95, 0.25,-0.94,1.95), nrow=5, ncol=3, byrow=TRUE)
+p3 <- matrix(c(0.68,0,-0.75, 0.9,0,-0.65, 1,0,-0.5, 0.9,0,-0.65, 0.68,0,-0.75), nrow=5, ncol=3, byrow=TRUE)
 ## PLOT A BEZIER CURVE
-plot3d(bezier_points <- bezier(t=t, p=p1[1:3, ]), col = "#8A0808", size = 6, add = TRUE)
-## BEZIER CONTROL POINTS
-p2 <- matrix(c(-0.25,0.94,1.95, -0.2,1.2,1.95, 0,1.3,1.95, 0.2,1.2,1.95, 0.25,0.94,1.95), nrow=5, ncol=3, byrow=TRUE)
-## PLOT A BEZIER CURVE
-plot3d(bezier_points <- bezier(t=t, p=p2[1:3, ]), col = "#8A0808", size = 6, add = TRUE)
-## BEZIER CONTROL POINTS
-p3 <- matrix(c(0,0.9,1, 0,1.25,1.35, 0,1.3,1.95, 0,1.25,1.35, 0,0.9,1.3), nrow=5, ncol=3, byrow=TRUE)
-## PLOT A BEZIER CURVE
-plot3d(bezier_points <- bezier(t=t, p=p3[1:3, ]), col = "#8A0808", size = 6, add = TRUE)
+plot3d(bezier_points <- bezier(t=t, p=p3[1:3, ]), col = "#8A0808", size = 1, add = TRUE)
 
-# Dibuja la cuarta oreja del mortero valenciano
+## Segunda oreja del mortero valenciano
+xi <- 0
+yi <- 0
+zi <- 0
+for(p in 1:25) {
+  ## BEZIER CONTROL POINTS
+  p1 <- matrix(c(-0.68,0.2-yi,-0.5-zi, -0.9+xi,0.15,-0.5-zi, -1+xi,0,-0.5-zi, -0.9+xi,-0.15,-0.5-zi, -0.68+xi,-0.2-yi,-0.5-zi), nrow=5, ncol=3, byrow=TRUE)
+  ## PLOT A BEZIER CURVE
+  plot3d(bezier_points <- bezier(t=t, p=p1[1:3, ]), col = "#8A0808", size = 1, add = TRUE)
+  ## VARIABLE INCREASE
+  if(p>12) {
+    xi <- xi + 0.015
+  } else {
+    xi <- xi + 0.01
+  }
+  yi <- yi + 0.005
+  zi <- zi + 0.01
+}
+
+xi <- 0
+yi <- 0
+zi <- 0
+for(p in 1:25) {
+  ## BEZIER CONTROL POINTS
+  p2 <- matrix(c(-0.68,-0.2+yi,-0.5-zi, -0.9+xi,-0.15,-0.5-zi, -1+xi,0,-0.5-zi, -0.9+xi,0.15,-0.5-zi, -0.68+xi,0.2+yi,-0.5-zi), nrow=5, ncol=3, byrow=TRUE)
+  ## PLOT A BEZIER CURVE
+  plot3d(bezier_points <- bezier(t=t, p=p2[1:3, ]), col = "#8A0808", size = 1, add = TRUE)
+  ## VARIABLE INCREASE
+  if(p>12) {
+    xi <- xi + 0.015
+  } else {
+    xi <- xi + 0.01
+  }
+  yi <- yi + 0.005
+  zi <- zi + 0.01
+}
 ## BEZIER CONTROL POINTS
-p1 <- matrix(c(0.25,-0.94,1.95, 0.2,-1.2,1.95, 0,-1.3,1.95, 0.2,1.2,1.95, 0.25,0.94,1.95), nrow=5, ncol=3, byrow=TRUE)
+p3 <- matrix(c(-0.68,0,-0.75, -0.9,0,-0.65, -1,0,-0.5, -0.9,0,-0.65, -0.68,0,-0.75), nrow=5, ncol=3, byrow=TRUE)
 ## PLOT A BEZIER CURVE
-plot3d(bezier_points <- bezier(t=t, p=p1[1:3, ]), col = "#8A0808", size = 6, add = TRUE)
+plot3d(bezier_points <- bezier(t=t, p=p3[1:3, ]), col = "#8A0808", size = 1, add = TRUE)
+
+## Tercera oreja del mortero valenciano
+xi <- 0
+yi <- 0
+zi <- 0
+for(p in 1:25) {
+  ## BEZIER CONTROL POINTS
+  p1 <- matrix(c(0.2-yi,0.68,-0.5-zi,0.15, 0.9-xi,-0.5-zi, 0,1-xi,-0.5-zi, -0.15,0.9-xi,-0.5-zi, -0.2-yi,0.68-xi,-0.5-zi), nrow=5, ncol=3, byrow=TRUE)
+  ## PLOT A BEZIER CURVE
+  plot3d(bezier_points <- bezier(t=t, p=p1[1:3, ]), col = "#8A0808", size = 1, add = TRUE)
+  ## VARIABLE INCREASE
+  if(p>12) {
+    xi <- xi + 0.015
+  } else {
+    xi <- xi + 0.01
+  }
+  yi <- yi + 0.005
+  zi <- zi + 0.01
+}
+
+xi <- 0
+yi <- 0
+zi <- 0
+for(p in 1:25) {
+  ## BEZIER CONTROL POINTS
+  p2 <- matrix(c(-0.2+yi,0.68,-0.5-zi, -0.15,0.9-xi,-0.5-zi, 0,1-xi,-0.5-zi, 0.15,0.9-xi,-0.5-zi, 0.2+yi,0.68-xi,-0.5-zi), nrow=5, ncol=3, byrow=TRUE)
+  ## PLOT A BEZIER CURVE
+  plot3d(bezier_points <- bezier(t=t, p=p2[1:3, ]), col = "#8A0808", size = 1, add = TRUE)
+  ## VARIABLE INCREASE
+  if(p>12) {
+    xi <- xi + 0.015
+  } else {
+    xi <- xi + 0.01
+  }
+  yi <- yi + 0.005
+  zi <- zi + 0.01
+}
+
 ## BEZIER CONTROL POINTS
-p2 <- matrix(c(-0.25,-0.94,1.95, -0.2,-1.2,1.95, 0,-1.3,1.95, 0.2,-1.2,1.95, 0.25,-0.94,1.95), nrow=5, ncol=3, byrow=TRUE)
+p3 <- matrix(c(0,0.68,-0.75, 0,0.9,-0.65, 0,1,-0.5, 0,0.9,-0.65, 0,0.68,-0.75), nrow=5, ncol=3, byrow=TRUE)
 ## PLOT A BEZIER CURVE
-plot3d(bezier_points <- bezier(t=t, p=p2[1:3, ]), col = "#8A0808", size = 6, add = TRUE)
+plot3d(bezier_points <- bezier(t=t, p=p3[1:3, ]), col = "#8A0808", size = 1, add = TRUE)
+
+## Cuarta oreja del mortero valenciano
+xi <- 0
+yi <- 0
+zi <- 0
+for(p in 1:25) {
+  ## BEZIER CONTROL POINTS
+  p1 <- matrix(c(0.2-yi,-0.68,-0.5-zi, 0.15,-0.9+xi,-0.5-zi, 0,-1+xi,-0.5-zi, -0.15,-0.9+xi,-0.5-zi, -0.2-yi,-0.68+xi,-0.5-zi), nrow=5, ncol=3, byrow=TRUE)
+  ## PLOT A BEZIER CURVE
+  plot3d(bezier_points <- bezier(t=t, p=p1[1:3, ]), col = "#8A0808", size = 1, add = TRUE)
+  ## VARIABLE INCREASE
+  if(p>12) {
+    xi <- xi + 0.015
+  } else {
+    xi <- xi + 0.01
+  }
+  yi <- yi + 0.005
+  zi <- zi + 0.01
+}
+
+xi <- 0
+yi <- 0
+zi <- 0
+for(p in 1:25) {
+  ## BEZIER CONTROL POINTS
+  p2 <- matrix(c(-0.2+yi,-0.68,-0.5-zi, -0.15,-0.9+xi,-0.5-zi, 0,-1+xi,-0.5-zi, 0.15,-0.9+xi,-0.5-zi, 0.2+yi,-0.68+xi,-0.5-zi), nrow=5, ncol=3, byrow=TRUE)
+  ## PLOT A BEZIER CURVE
+  plot3d(bezier_points <- bezier(t=t, p=p2[1:3, ]), col = "#8A0808", size = 1, add = TRUE)
+  ## VARIABLE INCREASE
+  if(p>12) {
+    xi <- xi + 0.015
+  } else {
+    xi <- xi + 0.01
+  }
+  yi <- yi + 0.005
+  zi <- zi + 0.01
+}
+
 ## BEZIER CONTROL POINTS
-p3 <- matrix(c(0,-0.9,1, 0,-1.25,1.35, 0,-1.3,1.95, 0,-1.25,1.35, 0,-0.9,1.3), nrow=5, ncol=3, byrow=TRUE)
+p3 <- matrix(c(0,-0.68,-0.75, 0,-0.9,-0.65, 0,-1,-0.5, 0,-0.9,-0.65, 0,-0.68,-0.75), nrow=5, ncol=3, byrow=TRUE)
 ## PLOT A BEZIER CURVE
-plot3d(bezier_points <- bezier(t=t, p=p3[1:3, ]), col = "#8A0808", size = 6, add = TRUE)
+plot3d(bezier_points <- bezier(t=t, p=p3[1:3, ]), col = "#8A0808", size = 1, add = TRUE)
 
 halfsphere.area = function(r)
 {
@@ -92,7 +203,7 @@ pyramid.area = function(l)
 
 mortero.area = function() 
 {
-  area = halfsphere.area(1) + 4 * pyramid.area(0.5)
+  area = halfsphere.area(1.00) + 4 * pyramid.area(0.30)
   
   area
 }
@@ -117,7 +228,7 @@ pyramid.volume = function(l)
 
 mortero.volume = function()
 {
-  volume = pyramid.volume(0.5) * 4 + halfsphere.volume(1)
+  volume = (pyramid.volume(0.30) -  pyramid.volume(0.29)) * 4 + (halfsphere.volume(1.00) - halfsphere.volume(0.99))
   
   volume
 }
